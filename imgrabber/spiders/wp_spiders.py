@@ -12,7 +12,7 @@ class WPSpider(CrawlSpider):
     target = "http://digidye.com"
     allowed_domains = [urlparse(target).netloc]
     # start_urls = [urljoin(target, "wp-content/uploads/")]
-    start_urls = [urljoin(target, "i/")]
+    start_urls = [urljoin(target, "i/2015/06/")]
     rules = [
         Rule(
         LxmlLinkExtractor(), #restrict_xpaths=("(//a)[position()>1] ")),
