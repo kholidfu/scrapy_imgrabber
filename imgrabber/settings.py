@@ -36,4 +36,4 @@ IMAGES_STORE = os.path.join("/home/banteng/Desktop/imgcontainer", target_dir)
 IMAGES_MIN_HEIGHT = 351
 IMAGES_MIN_WIDTH = 351
 
-DOWNLOAD_DELAY = 5
+DOWNLOAD_DELAY = 0
