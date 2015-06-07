@@ -14,23 +14,23 @@
 ** settings delay each request
 edit =imgrabber/settings.py=
 
-ubah bagian DOWNLOAD_DELAY = seconds
+ubah bagian =DOWNLOAD_DELAY= = seconds
 
-jika diisi 0 berarti no delay alias kemaruk ndang rampung.
+jika diisi 0 berarti no delay alias kemaruk ndang rampung, ati2 BL.
 
 ** filter images size:
-IMAGES_MIN_HEIGHT = min. tinggi
+=IMAGES_MIN_HEIGHT= = min. tinggi
 
-IMAGES_MIN_WIDTH = min. lebar
+=IMAGES_MIN_WIDTH= = min. lebar
 
 ** setting target
-edit =imgrabber/spiders/wp_spiders.py=
+edit =imgrabber/spiders/wp_spiders.py=:
 
-cari baris =target= (line 12), ganti dengan url target
+cari baris =target= (line 12), ganti dengan url target.
 
 kemudian =start_urls= untuk membatasi agar scrapy tidak meng-crawl
-url yang tidak perlu (gak ada image)
+url yang tidak perlu (gak ada image).
 
-settingan wp default, maka nilainya adalah =wp-content/uploads/=
+settingan wp default, maka nilainya adalah =wp-content/uploads/=.
 
 ini berarti hanya akan mencari di folder tersebut dan turunananya.
