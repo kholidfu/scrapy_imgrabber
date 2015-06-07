@@ -19,6 +19,7 @@ class ImgrabberPipeline(object):
 class CustomImagesPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
+        # this is the downloader
         for url in item["image_urls"]:
             yield scrapy.Request(url,
                 headers={
@@ -28,11 +29,26 @@ class CustomImagesPipeline(ImagesPipeline):
                     })
 
     def file_path(self, request, response=None, info=None):
+        """
+        override method from parent class.
+        """
         # conditional 1 seperti flexicengli.com
         # fext = os.path.splitext(os.path.basename(request.url))[-1]
         # fname = "-".join(os.path.basename(request.url).split("-")[:-2])
         # return "full/%s" % fname + fext
-        return "full/%s" % os.path.basename(request.url)
+
+        # tukang pecah belah disini
+        # if kitchen in basename: path full/kitchen-design/basename
+
+        fname = os.path.basename(request.url).lower()
+        kitchen_keywords = ["kitchen", ]
+        living_room_keywords = ["living", ]
+
+        if any(i in fname for i in kitchen_keywords):
+            return "full/%s/%s" % ("kitchen-design", fname)
+        if any(i in fname for i in living_room_keywords):
+            return "full/%s/%s" % ("living-room", fname)
+        return "full/%s/%s" % ("unsorted", fname)
 
 
     def thumb_path(self, request, thumb_id, response=None, info=None):
