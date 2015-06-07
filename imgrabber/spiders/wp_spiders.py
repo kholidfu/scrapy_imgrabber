@@ -9,7 +9,7 @@ import re
 
 class WPSpider(CrawlSpider):
     name = "wpspider"
-    target = "http://hominic.com"
+    target = "http://example.com"
     allowed_domains = [urlparse(target).netloc]
     start_urls = [urljoin(target, "wp-content/uploads/")]
     # start_urls = [urljoin(target, "i/2015/06/")]

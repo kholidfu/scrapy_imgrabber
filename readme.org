@@ -24,12 +24,11 @@ IMAGES_MIN_HEIGHT = min. tinggi
 IMAGES_MIN_WIDTH = min. lebar
 
 ** setting target
-edit imgrabber/spiders/wp_spiders.py
+edit =imgrabber/spiders/wp_spiders.py=
 
 cari baris =target= (line 12), ganti dengan url target
 
 kemudian =start_urls= untuk membatasi agar scrapy tidak meng-crawl
-
 url yang tidak perlu (gak ada image)
 
 settingan wp default, maka nilainya adalah =wp-content/uploads/=
