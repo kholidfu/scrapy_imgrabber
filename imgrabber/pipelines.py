@@ -23,7 +23,8 @@ class CustomImagesPipeline(ImagesPipeline):
             yield scrapy.Request(url,
                 headers={
                     "Referer": "%s://%s" % (urlparse(url).scheme, urlparse(url).netloc),
-                    "User-agent": "Googlebot",
+                    #"User-agent": "Googlebot",
+                    "User-agent": "Mozilla/5.0",
                     })
 
     def file_path(self, request, response=None, info=None):

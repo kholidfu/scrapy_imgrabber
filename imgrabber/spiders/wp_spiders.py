@@ -9,9 +9,10 @@ import re
 
 class WPSpider(CrawlSpider):
     name = "wpspider"
-    target = "http://fazook.com"
+    target = "http://digidye.com"
     allowed_domains = [urlparse(target).netloc]
-    start_urls = [urljoin(target, "wp-content/uploads/")]
+    # start_urls = [urljoin(target, "wp-content/uploads/")]
+    start_urls = [urljoin(target, "i/")]
     rules = [
         Rule(
         LxmlLinkExtractor(), #restrict_xpaths=("(//a)[position()>1] ")),
