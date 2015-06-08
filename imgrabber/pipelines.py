@@ -41,7 +41,7 @@ class CustomImagesPipeline(ImagesPipeline):
         # if kitchen in basename: path full/kitchen-design/basename
 
         fname = os.path.basename(request.url).lower()
-        home_elements = ["lamp", ]
+        home_element_keywords = ["lamp", ]
         kitchen_keywords = ["kitchen", ]
         living_room_keywords = ["living", ]
 
@@ -49,8 +49,8 @@ class CustomImagesPipeline(ImagesPipeline):
             return "full/%s/%s" % ("kitchen-design", fname)
         if any(i in fname for i in living_room_keywords):
             return "full/%s/%s" % ("living-room", fname)
-        if any(i in fname for i in home_elements):
-            return "full/%s/%s" % ("home-elements", fname)
+        if any(i in fname for i in home_element_keywords):
+            return "full/%s/%s" % ("home-element", fname)
         return "full/%s/%s" % ("unsorted", fname)
 
 
